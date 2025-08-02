@@ -48,11 +48,11 @@ const Home: React.FC = () => {
               <img 
                 src="https://cdn.discordapp.com/avatars/1397206233735364779/8fa75245159d09566b03e042a3cdff3b.png" 
                 alt="Software Development" 
-                className="w-24 h-24 rounded-2xl ring-4 ring-blue-500/50 shadow-2xl"
+                className="w-24 h-24 rounded-2xl ring-4 ring-blue-500/50 shadow-2xl pulse-glow float"
               />
             </div>
             <h1 className="text-5xl md:text-7xl font-bold mb-6">
-              <span className="bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent">
+              <span className="gradient-text">
                 Software Development
               </span>
             </h1>
@@ -63,14 +63,14 @@ const Home: React.FC = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button 
                 onClick={() => navigator.clipboard.writeText('play.softwaredevelopment.com')}
-                className="flex items-center justify-center space-x-2 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
+                className="flex items-center justify-center space-x-2 btn-primary px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-2xl"
               >
                 <Play className="w-6 h-6" />
                 <span>Sunucuya Katıl</span>
               </button>
               <Link 
                 to="/market"
-                className="flex items-center justify-center space-x-2 bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
+                className="flex items-center justify-center space-x-2 bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-2xl"
               >
                 <ShoppingCart className="w-6 h-6" />
                 <span>Market</span>
@@ -86,7 +86,7 @@ const Home: React.FC = () => {
           <motion.h2 
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            className="text-3xl md:text-4xl font-bold text-center mb-12 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent"
+            className="text-3xl md:text-4xl font-bold text-center mb-12 gradient-text"
           >
             Sunucu İstatistikleri
           </motion.h2>
@@ -99,7 +99,7 @@ const Home: React.FC = () => {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}
-                  className="bg-gradient-to-br from-gray-900/50 to-slate-800/50 backdrop-blur-sm p-6 rounded-xl border border-gray-700/50 text-center hover:border-blue-500/50 transition-all duration-300"
+                  className="glass p-6 rounded-xl text-center card-hover border border-white/10 hover:border-blue-500/50 transition-all duration-300"
                 >
                   <Icon className="w-8 h-8 text-blue-400 mx-auto mb-3" />
                   <div className="text-2xl font-bold text-white mb-1">{stat.value}</div>
@@ -117,7 +117,7 @@ const Home: React.FC = () => {
           <motion.h2 
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            className="text-3xl md:text-4xl font-bold text-center mb-12 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent"
+            className="text-3xl md:text-4xl font-bold text-center mb-12 gradient-text"
           >
             Neden Bizi Seçmelisiniz?
           </motion.h2>
@@ -130,7 +130,7 @@ const Home: React.FC = () => {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}
-                  className="bg-gradient-to-br from-gray-900/50 to-slate-800/50 backdrop-blur-sm p-6 rounded-xl border border-gray-700/50 hover:border-blue-500/50 transition-all duration-300 group"
+                  className="glass p-6 rounded-xl border border-white/10 card-hover hover:border-blue-500/50 transition-all duration-300 group"
                 >
                   <Icon className="w-12 h-12 text-blue-400 mb-4 group-hover:scale-110 transition-transform duration-300" />
                   <h3 className="text-xl font-semibold text-white mb-3">{feature.title}</h3>
@@ -148,7 +148,7 @@ const Home: React.FC = () => {
           <motion.h2 
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            className="text-3xl md:text-4xl font-bold text-center mb-12 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent"
+            className="text-3xl md:text-4xl font-bold text-center mb-12 gradient-text"
           >
             Son Duyurular
           </motion.h2>
@@ -159,13 +159,14 @@ const Home: React.FC = () => {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-gradient-to-br from-gray-900/50 to-slate-800/50 backdrop-blur-sm p-6 rounded-xl border border-gray-700/50 hover:border-blue-500/50 transition-all duration-300"
+                className="glass p-6 rounded-xl border border-white/10 card-hover hover:border-blue-500/50 transition-all duration-300"
               >
-                <div className="h-40 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg mb-4 flex items-center justify-center">
+                <div className="h-40 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg mb-4 flex items-center justify-center overflow-hidden relative">
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20 animate-pulse"></div>
                   <img 
                     src="https://cdn.discordapp.com/avatars/1397206233735364779/8fa75245159d09566b03e042a3cdff3b.png" 
                     alt="Software Development" 
-                    className="w-16 h-16 rounded-lg opacity-50"
+                    className="w-16 h-16 rounded-lg opacity-50 float relative z-10"
                   />
                 </div>
                 <h3 className="text-xl font-semibold text-white mb-2">
@@ -176,7 +177,7 @@ const Home: React.FC = () => {
                 </p>
                 <div className="flex justify-between items-center">
                   <span className="text-sm text-gray-500">2 gün önce</span>
-                  <Link to="/duyurular" className="text-blue-400 hover:text-blue-300 text-sm">
+                  <Link to="/duyurular" className="text-blue-400 hover:text-blue-300 text-sm transition-all duration-300 hover:translate-x-1">
                     Devamını oku →
                   </Link>
                 </div>
@@ -192,9 +193,9 @@ const Home: React.FC = () => {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            className="bg-gradient-to-r from-blue-600/20 to-purple-600/20 backdrop-blur-sm p-12 rounded-2xl border border-blue-500/30"
+            className="glass p-12 rounded-2xl border border-blue-500/30 card-hover"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 gradient-text">
               Maceraya Başlamaya Hazır mısın?
             </h2>
             <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
@@ -203,13 +204,13 @@ const Home: React.FC = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link 
                 to="/register"
-                className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
+                className="btn-primary px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-2xl"
               >
                 Hemen Kayıt Ol
               </Link>
               <Link 
                 to="/market"
-                className="border border-blue-500 hover:bg-blue-500/10 px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300"
+                className="border border-blue-500 hover:bg-blue-500/10 px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 hover:scale-105"
               >
                 Market'i İncele
               </Link>

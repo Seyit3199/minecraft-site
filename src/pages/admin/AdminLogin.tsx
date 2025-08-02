@@ -36,15 +36,15 @@ const AdminLogin: React.FC = () => {
         transition={{ duration: 0.8 }}
         className="w-full max-w-md"
       >
-        <div className="bg-gradient-to-br from-red-900/80 to-gray-900/80 backdrop-blur-xl p-8 rounded-2xl border border-red-500/50 shadow-2xl">
+        <div className="glass p-8 rounded-2xl border border-red-500/30 shadow-2xl card-hover">
           {/* Header */}
           <div className="text-center mb-8">
             <div className="flex justify-center mb-4">
-              <div className="p-4 bg-red-500/20 rounded-xl">
+              <div className="p-4 bg-red-500/20 rounded-xl pulse-glow">
                 <Shield className="w-12 h-12 text-red-400" />
               </div>
             </div>
-            <h1 className="text-3xl font-bold bg-gradient-to-r from-red-400 to-orange-400 bg-clip-text text-transparent mb-2">
+            <h1 className="text-3xl font-bold gradient-text mb-2">
               Admin Paneli
             </h1>
             <p className="text-gray-400">Yönetici girişi yapın</p>
@@ -74,7 +74,7 @@ const AdminLogin: React.FC = () => {
                   type="text"
                   value={username}
                   onChange={(e) => setUsername(e.target.value)}
-                  className="w-full pl-10 pr-4 py-3 bg-gray-800/50 border border-gray-600 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent text-white placeholder-gray-400 transition-all duration-200"
+                  className="w-full pl-10 pr-4 py-3 glass border border-white/20 rounded-xl focus:ring-2 focus:ring-red-500 focus:border-red-500 text-white placeholder-gray-400 transition-all duration-300"
                   placeholder="admin"
                   required
                 />
@@ -92,7 +92,7 @@ const AdminLogin: React.FC = () => {
                   type={showPassword ? 'text' : 'password'}
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="w-full pl-10 pr-12 py-3 bg-gray-800/50 border border-gray-600 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent text-white placeholder-gray-400 transition-all duration-200"
+                  className="w-full pl-10 pr-12 py-3 glass border border-white/20 rounded-xl focus:ring-2 focus:ring-red-500 focus:border-red-500 text-white placeholder-gray-400 transition-all duration-300"
                   placeholder="••••••••"
                   required
                 />
@@ -110,10 +110,10 @@ const AdminLogin: React.FC = () => {
             <button
               type="submit"
               disabled={loading}
-              className="w-full bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-700 hover:to-orange-700 disabled:opacity-50 disabled:cursor-not-allowed px-6 py-3 rounded-lg font-semibold text-white transition-all duration-300 transform hover:scale-[1.02] flex items-center justify-center space-x-2"
+              className="w-full bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-700 hover:to-orange-700 disabled:opacity-50 disabled:cursor-not-allowed px-6 py-3 rounded-xl font-semibold text-white transition-all duration-300 transform hover:scale-[1.02] flex items-center justify-center space-x-2 shadow-lg"
             >
               {loading ? (
-                <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                <div className="spinner w-5 h-5" />
               ) : (
                 <>
                   <Shield className="w-5 h-5" />
@@ -126,8 +126,10 @@ const AdminLogin: React.FC = () => {
           {/* Demo Credentials */}
           <div className="mt-6 p-4 bg-red-500/10 border border-red-500/30 rounded-lg">
             <p className="text-red-400 text-sm font-medium mb-2">Demo Bilgileri:</p>
-            <p className="text-gray-300 text-xs">Kullanıcı Adı: admin</p>
-            <p className="text-gray-300 text-xs">Şifre: admin123</p>
+            <div className="space-y-1">
+              <p className="text-gray-300 text-xs font-mono">Kullanıcı Adı: admin</p>
+              <p className="text-gray-300 text-xs font-mono">Şifre: admin123</p>
+            </div>
           </div>
         </div>
       </motion.div>

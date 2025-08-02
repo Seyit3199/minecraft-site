@@ -37,17 +37,17 @@ const Login: React.FC = () => {
         transition={{ duration: 0.8 }}
         className="w-full max-w-md"
       >
-        <div className="bg-gradient-to-br from-gray-900/80 to-slate-800/80 backdrop-blur-xl p-8 rounded-2xl border border-gray-700/50 shadow-2xl">
+        <div className="glass p-8 rounded-2xl border border-white/10 shadow-2xl card-hover">
           {/* Header */}
           <div className="text-center mb-8">
             <div className="flex justify-center mb-4">
               <img 
                 src="https://cdn.discordapp.com/avatars/1397206233735364779/8fa75245159d09566b03e042a3cdff3b.png" 
                 alt="Software Development" 
-                className="w-16 h-16 rounded-xl ring-4 ring-blue-500/50"
+                className="w-16 h-16 rounded-xl ring-4 ring-blue-500/50 pulse-glow float"
               />
             </div>
-            <h1 className="text-3xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-2">
+            <h1 className="text-3xl font-bold gradient-text mb-2">
               Giriş Yap
             </h1>
             <p className="text-gray-400">Software Development'a hoş geldin!</p>
@@ -77,7 +77,7 @@ const Login: React.FC = () => {
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="w-full pl-10 pr-4 py-3 bg-gray-800/50 border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-white placeholder-gray-400 transition-all duration-200"
+                  className="w-full pl-10 pr-4 py-3 glass border border-white/20 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-white placeholder-gray-400 transition-all duration-300"
                   placeholder="email@example.com"
                   required
                 />
@@ -95,7 +95,7 @@ const Login: React.FC = () => {
                   type={showPassword ? 'text' : 'password'}
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="w-full pl-10 pr-12 py-3 bg-gray-800/50 border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-white placeholder-gray-400 transition-all duration-200"
+                  className="w-full pl-10 pr-12 py-3 glass border border-white/20 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-white placeholder-gray-400 transition-all duration-300"
                   placeholder="••••••••"
                   required
                 />
@@ -113,10 +113,10 @@ const Login: React.FC = () => {
             <button
               type="submit"
               disabled={loading}
-              className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 disabled:opacity-50 disabled:cursor-not-allowed px-6 py-3 rounded-lg font-semibold text-white transition-all duration-300 transform hover:scale-[1.02] flex items-center justify-center space-x-2"
+              className="w-full btn-primary disabled:opacity-50 disabled:cursor-not-allowed px-6 py-3 rounded-xl font-semibold text-white transition-all duration-300 transform hover:scale-[1.02] flex items-center justify-center space-x-2 shadow-lg"
             >
               {loading ? (
-                <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                <div className="spinner w-5 h-5" />
               ) : (
                 <>
                   <LogIn className="w-5 h-5" />
@@ -139,8 +139,10 @@ const Login: React.FC = () => {
           {/* Demo Account */}
           <div className="mt-6 p-4 bg-blue-500/10 border border-blue-500/30 rounded-lg">
             <p className="text-blue-400 text-sm font-medium mb-2">Demo Hesap:</p>
-            <p className="text-gray-300 text-xs">Email: demo@example.com</p>
-            <p className="text-gray-300 text-xs">Şifre: demo123</p>
+            <div className="space-y-1">
+              <p className="text-gray-300 text-xs font-mono">Email: demo@example.com</p>
+              <p className="text-gray-300 text-xs font-mono">Şifre: demo123</p>
+            </div>
           </div>
         </div>
       </motion.div>

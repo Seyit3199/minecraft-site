@@ -51,17 +51,17 @@ const Register: React.FC = () => {
         transition={{ duration: 0.8 }}
         className="w-full max-w-md"
       >
-        <div className="bg-gradient-to-br from-gray-900/80 to-slate-800/80 backdrop-blur-xl p-8 rounded-2xl border border-gray-700/50 shadow-2xl">
+        <div className="glass p-8 rounded-2xl border border-white/10 shadow-2xl card-hover">
           {/* Header */}
           <div className="text-center mb-8">
             <div className="flex justify-center mb-4">
               <img 
                 src="https://cdn.discordapp.com/avatars/1397206233735364779/8fa75245159d09566b03e042a3cdff3b.png" 
                 alt="Software Development" 
-                className="w-16 h-16 rounded-xl ring-4 ring-purple-500/50"
+                className="w-16 h-16 rounded-xl ring-4 ring-purple-500/50 pulse-glow float"
               />
             </div>
-            <h1 className="text-3xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent mb-2">
+            <h1 className="text-3xl font-bold gradient-text mb-2">
               Kayıt Ol
             </h1>
             <p className="text-gray-400">Software Development ailesine katıl!</p>
@@ -91,7 +91,7 @@ const Register: React.FC = () => {
                   type="text"
                   value={username}
                   onChange={(e) => setUsername(e.target.value)}
-                  className="w-full pl-10 pr-4 py-3 bg-gray-800/50 border border-gray-600 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent text-white placeholder-gray-400 transition-all duration-200"
+                  className="w-full pl-10 pr-4 py-3 glass border border-white/20 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-purple-500 text-white placeholder-gray-400 transition-all duration-300"
                   placeholder="kullaniciadi"
                   required
                 />
@@ -109,7 +109,7 @@ const Register: React.FC = () => {
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="w-full pl-10 pr-4 py-3 bg-gray-800/50 border border-gray-600 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent text-white placeholder-gray-400 transition-all duration-200"
+                  className="w-full pl-10 pr-4 py-3 glass border border-white/20 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-purple-500 text-white placeholder-gray-400 transition-all duration-300"
                   placeholder="email@example.com"
                   required
                 />
@@ -127,7 +127,7 @@ const Register: React.FC = () => {
                   type={showPassword ? 'text' : 'password'}
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="w-full pl-10 pr-12 py-3 bg-gray-800/50 border border-gray-600 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent text-white placeholder-gray-400 transition-all duration-200"
+                  className="w-full pl-10 pr-12 py-3 glass border border-white/20 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-purple-500 text-white placeholder-gray-400 transition-all duration-300"
                   placeholder="••••••••"
                   required
                 />
@@ -152,7 +152,7 @@ const Register: React.FC = () => {
                   type={showConfirmPassword ? 'text' : 'password'}
                   value={confirmPassword}
                   onChange={(e) => setConfirmPassword(e.target.value)}
-                  className="w-full pl-10 pr-12 py-3 bg-gray-800/50 border border-gray-600 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent text-white placeholder-gray-400 transition-all duration-200"
+                  className="w-full pl-10 pr-12 py-3 glass border border-white/20 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-purple-500 text-white placeholder-gray-400 transition-all duration-300"
                   placeholder="••••••••"
                   required
                 />
@@ -170,10 +170,10 @@ const Register: React.FC = () => {
             <button
               type="submit"
               disabled={loading}
-              className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 disabled:opacity-50 disabled:cursor-not-allowed px-6 py-3 rounded-lg font-semibold text-white transition-all duration-300 transform hover:scale-[1.02] flex items-center justify-center space-x-2"
+              className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 disabled:opacity-50 disabled:cursor-not-allowed px-6 py-3 rounded-xl font-semibold text-white transition-all duration-300 transform hover:scale-[1.02] flex items-center justify-center space-x-2 shadow-lg"
             >
               {loading ? (
-                <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                <div className="spinner w-5 h-5" />
               ) : (
                 <>
                   <UserPlus className="w-5 h-5" />
